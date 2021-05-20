@@ -11,7 +11,7 @@ in stdenv.mkDerivation rec {
     owner  = "EleonoreMizo";
     repo   = "fmtconv";
     rev    = version;
-    sha256 = "1vaiwws3jqglv59fvlxrbkwynrrwj9597mi4z37jvsdzicpmrf0i";
+    sha256 = "1nvanskvh8qv45h7islwgnyrvdkcn7h9jks5fskg4c00aj6bxrrn";
   };
 
   nativeBuildInputs = [ autoreconfHook ];
