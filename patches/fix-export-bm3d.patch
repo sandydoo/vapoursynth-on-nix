@@ -1,0 +1,12 @@
+diff --git a/meson.build b/meson.build
+index 66f9131..bdec4d0 100644
+--- a/meson.build
++++ b/meson.build
+@@ -46,6 +46,6 @@ shared_module('bm3d', sources,
+   dependencies : [vapoursynth_dep, fftw3f_dep],
+   include_directories : include_directories('include'),
+   install : true,
+-  install_dir : join_paths(vapoursynth_dep.get_pkgconfig_variable('libdir'), 'vapoursynth'),
++  install_dir : 'lib',
+   gnu_symbol_visibility : 'hidden'
+ )

@@ -1,0 +1,11 @@
+diff --git a/meson.build b/meson.build
+index 380944d..943b810 100644
+--- a/meson.build
++++ b/meson.build
+@@ -33,5 +33,5 @@ library(
+     'knlmeanscl',
+     src,
+     dependencies : deps,
+-    install_dir : join_paths(get_option('prefix'), get_option('libdir'), 'vapoursynth'),
++    install_dir : 'lib',
+     install : true)

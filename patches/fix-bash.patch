@@ -1,0 +1,10 @@
+diff --git a/configure b/configure
+index 67b68e9..7cb5587 100755
+--- a/configure
++++ b/configure
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!@bash@
+
+ #----------------------------------------------------------------------------------------------
+ #  configure script for VapourSynth plugins

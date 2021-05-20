@@ -1,0 +1,11 @@
+diff --git a/meson.build b/meson.build
+index 56ffd17..c1b4980 100644
+--- a/meson.build
++++ b/meson.build
+@@ -42,5 +42,5 @@ endif
+ shared_module('fft3dfilter', sources,
+   dependencies : deps,
+   install : true,
+-  install_dir : join_paths(vapoursynth_dep.get_pkgconfig_variable('libdir'), 'vapoursynth')
++  install_dir : 'lib'
+ )
