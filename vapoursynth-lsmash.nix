@@ -22,12 +22,9 @@ in stdenv.mkDerivation rec {
 
   buildInputs = [ vapoursynth ffmpeg  lsmash ];
 
-  patches = [
-    (substituteAll {
-      src = ./patches/fix-bash.patch;
-      bash = "${bash}/bin/bash";
-    })
-  ];
+  prePatch = ''
+    patchShebangs configure
+  '';
 
   preBuild = ''
     chmod -R 755 ../common
