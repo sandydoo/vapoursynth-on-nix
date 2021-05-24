@@ -18,10 +18,7 @@ in stdenv.mkDerivation rec {
 
   buildInputs = [ vapoursynth ];
 
-  postInstall = ''
-    mkdir $out/lib/vapoursynth
-    ln -s $out/lib/libnnedi3.so $out/lib/vapoursynth/libnnedi3.so
-  '';
+  configureFlags = [ "--libdir=$(out)/lib/vapoursynth" ];
 
   meta = with lib; {
     description = "Format conversion tools for Vapoursynth";

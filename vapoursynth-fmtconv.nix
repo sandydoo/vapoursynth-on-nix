@@ -18,14 +18,11 @@ in stdenv.mkDerivation rec {
 
   sourceRoot = "source/build/unix";
 
+  configureFlags = [ "--libdir=$(out)/lib/vapoursynth" ];
+
   # Not sure what the “right” way of dealing with these repos is.
   preBuild = ''
     chmod -R 755 ../../src
-  '';
-
-  postInstall = ''
-    mkdir $out/lib/vapoursynth
-    ln -s $out/lib/libfmtconv.so $out/lib/vapoursynth/libfmtconv.so
   '';
 
   meta = with lib; {
