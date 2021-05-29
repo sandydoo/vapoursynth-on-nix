@@ -1,9 +1,6 @@
-let
-  pkgs = import <nixpkgs> {};
+{ lib, stdenv, fetchFromGitHub, which }:
 
-  inherit (pkgs) lib stdenv fetchFromGitHub which;
-
-in stdenv.mkDerivation rec {
+stdenv.mkDerivation rec {
   pname = "lsmash";
   version = "v2.14.5";
 

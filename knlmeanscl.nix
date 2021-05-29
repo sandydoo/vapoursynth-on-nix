@@ -1,10 +1,9 @@
-let
-  pkgs = import <nixpkgs> {};
+{ lib, stdenv, fetchFromGitHub, meson, ninja, pkg-config
+, intel-ocl, ocl-icd, opencl-headers
+, boost, vapoursynth
+}:
 
-  inherit (pkgs) lib stdenv fetchFromGitHub intel-ocl ocl-icd opencl-headers meson ninja pkg-config boost vapoursynth;
-
-  # boost = pkgs.boost.override { enableShared = false; enabledStatic = true; };
-in stdenv.mkDerivation rec {
+stdenv.mkDerivation rec {
   pname = "knlmeanscl";
   version = "master";
 
@@ -20,6 +19,7 @@ in stdenv.mkDerivation rec {
   BOOST_INCLUDEDIR = "${lib.getDev boost}/include";
   BOOST_LIBRARYDIR = "${lib.getLib boost}/lib";
 
+  # This is obviously not currently portable.
   nativeBuildInputs = [ intel-ocl ocl-icd meson ninja pkg-config ];
 
   buildInputs = [

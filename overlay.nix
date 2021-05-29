@@ -1,9 +1,9 @@
 self: super: rec {
-  lsmash = import ./lsmash.nix;
-  vapoursynth-lsmash = import ./vapoursynth-lsmash.nix;
-  vapoursynth-fft3dfilter = import ./vapoursynth-fft3dfilter.nix;
-  vapoursynth-fmtconv = import ./vapoursynth-fmtconv.nix;
-  vapoursynth-nnedi3 = import ./vapoursynth-nnedi3.nix;
-  vapoursynth-bm3d = import ./vapoursynth-bm3d.nix;
-  knlmeanscl = import ./knlmeanscl.nix;
+  lsmash = super.callPackage ./lsmash.nix {};
+  vapoursynth-lsmash = super.callPackage ./vapoursynth-lsmash.nix {};
+  vapoursynth-fft3dfilter = super.callPackage ./vapoursynth-fft3dfilter.nix {};
+  vapoursynth-fmtconv = super.callPackage ./vapoursynth-fmtconv.nix {};
+  vapoursynth-nnedi3 = super.callPackage ./vapoursynth-nnedi3.nix {};
+  vapoursynth-bm3d = super.callPackage ./vapoursynth-bm3d.nix {};
+  knlmeanscl = super.callPackage ./knlmeanscl.nix {};
 }

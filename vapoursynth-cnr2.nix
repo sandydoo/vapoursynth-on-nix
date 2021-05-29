@@ -1,9 +1,6 @@
-let
-  pkgs = import <nixpkgs> {};
+{ lib, stdenv, fetchFromGitHub, autoreconfHook, pkg-config, vapoursynth }:
 
-  inherit (pkgs) lib stdenv fetchFromGitHub autoreconfHook pkg-config yasm vapoursynth;
-
-in stdenv.mkDerivation rec {
+stdenv.mkDerivation rec {
   pname = "vapoursynth-cnr2";
   version = "v1";
 

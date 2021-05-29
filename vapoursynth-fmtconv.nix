@@ -1,9 +1,6 @@
-let
-  pkgs = import <nixpkgs> {};
+{ lib, stdenv, fetchFromGitHub, autoreconfHook }:
 
-  inherit (pkgs) lib stdenv fetchFromGitHub autoreconfHook;
-
-in stdenv.mkDerivation rec {
+stdenv.mkDerivation rec {
   pname = "vapoursynth-fmtconv";
   version = "r22";
 

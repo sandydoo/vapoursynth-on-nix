@@ -1,11 +1,8 @@
-let
-  pkgs = import <nixpkgs> { };
+{ lib, stdenv, fetchFromGitHub, substituteAll, pkg-config, which
+, ffmpeg, lsmash, vapoursynth
+}:
 
-  lsmash = import ./lsmash.nix;
-
-  inherit (pkgs) lib stdenv fetchFromGitHub substituteAll pkg-config which ffmpeg vapoursynth bash;
-
-in stdenv.mkDerivation rec {
+stdenv.mkDerivation rec {
   pname = "vapoursynth-lsmash";
   version = "master";
 

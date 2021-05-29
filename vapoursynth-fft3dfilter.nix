@@ -1,9 +1,8 @@
-let
-  pkgs = import <nixpkgs> {};
+{ lib, stdenv, fetchFromGitHub, meson, pkg-config, ninja
+, fftwFloat, vapoursynth
+}:
 
-  inherit (pkgs) lib stdenv fetchFromGitHub meson pkg-config ninja fftwFloat vapoursynth;
-
-in stdenv.mkDerivation rec {
+stdenv.mkDerivation rec {
   pname = "vapoursynth-fft3dfilter";
   version = "8562ea719c82332dc69e032d1174edc3ada0a372";
 
