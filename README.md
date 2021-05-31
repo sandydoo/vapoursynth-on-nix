@@ -2,6 +2,8 @@
 
 These are [Nix derivations][nix] for an assortment of [VapourSynth][vapoursynth] plugins.
 
+> Check out https://github.com/tadeokondrak/vs-overlay for every VapourSynth plugin known to humankind.
+
 [VapourSynth][vapoursynth] is a video processing framework with a rich ecosystem of plugins. The plugins themselves are written in a variety of languages, and each comes with its own set of dependencies and required build tooling. This heteregeneity is a serious obstacle in getting a basic VapourSynth environment up and running.
 
 Here’s where [Nix][nix] comes in. With Nix, we can declare all of these complex dependencies and automatically get reproducible and portable development environments. One command — and you’re ready to start processing videos!
