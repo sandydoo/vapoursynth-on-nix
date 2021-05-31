@@ -13,18 +13,16 @@ stdenv.mkDerivation rec {
     sha256 = "1pb8rrh184pxy5calwfnmm02i0by8vc91c07w4ygj50y8yfqa3br";
   };
 
-  sourceRoot = "source/VapourSynth";
-
   nativeBuildInputs = [ pkg-config which ];
 
   buildInputs = [ vapoursynth ffmpeg  lsmash ];
 
   prePatch = ''
-    patchShebangs configure
+    patchShebangs VapourSynth/configure
   '';
 
-  preBuild = ''
-    chmod -R 755 ../common
+  preConfigure = ''
+    cd VapourSynth
   '';
 
   meta = with lib; {

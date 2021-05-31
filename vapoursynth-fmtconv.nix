@@ -1,4 +1,4 @@
-{ lib, stdenv, fetchFromGitHub, autoreconfHook }:
+{ lib, stdenv, fetchFromGitHub, autoreconfHook, vapoursynth }:
 
 stdenv.mkDerivation rec {
   pname = "vapoursynth-fmtconv";
@@ -13,19 +13,16 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ autoreconfHook ];
 
-  sourceRoot = "source/build/unix";
+  buildInputs = [ vapoursynth ];
+
+  preAutoreconf = "cd build/unix";
 
   configureFlags = [ "--libdir=$(out)/lib/vapoursynth" ];
-
-  # Not sure what the “right” way of dealing with these repos is.
-  preBuild = ''
-    chmod -R 755 ../../src
-  '';
 
   meta = with lib; {
     description = "Format conversion tools for Vapoursynth";
     homepage    = "https://github.com/EleonoreMizo/fmtconv";
-    license     = licenses.gpl2;
+    license     = licenses.wtfpl;
     platforms   = platforms.x86_64;
   };
 }
