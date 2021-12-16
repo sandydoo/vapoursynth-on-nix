@@ -1,5 +1,5 @@
-with import <nixpkgs> { overlays = [ (import ./overlay.nix) ]; };
-
+{ pkgs ? import <nixpkgs> { overlays = [ (import ./overlay.nix) ]; } }:
+with pkgs;
 let
   vapoursynth = pkgs.vapoursynth.withPlugins [
     knlmeanscl
